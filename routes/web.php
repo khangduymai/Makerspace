@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// route -> string
+Route::get('/string', function() {
+    return 'Hello Khang from string';
 });
+
+
+// route -> view
+Route::get('/route-view', function() {
+    return view('route-view-sample');
+});
+
+
+// route -> controller -> view
+
+// path variable in RESTful api
+Route::get('/ctof/{c}', 'TemperatureController@calculateF');
+
